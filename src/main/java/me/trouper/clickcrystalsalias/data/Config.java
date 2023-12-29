@@ -15,6 +15,7 @@ public class Config implements JsonSerializable<Config> {
     }
 
     public String prefix = "&bClick&3Crystals &8» &7";
+    public String discordURL = "https://discord.gg/tMaShNzNtP";
     public boolean debugMode = true;
     public String tempChunks = "tempchunks";
     // public Location spawn = Location(Bukkit.getWorld("spawn"),0,0,0,0,0);

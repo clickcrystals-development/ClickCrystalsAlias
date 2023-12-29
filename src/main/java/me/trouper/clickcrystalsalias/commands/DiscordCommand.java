@@ -7,29 +7,20 @@ import io.github.itzispyder.pdk.commands.completions.CompletionBuilder;
 import io.github.itzispyder.pdk.utils.misc.SoundPlayer;
 import me.trouper.clickcrystalsalias.ClickCrystalsAlias;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandRegistry(value="spawn")
-public class SpawnCommand implements CustomCommand {
-
-
+@CommandRegistry(value="discord")
+public class DiscordCommand implements CustomCommand {
 
     @Override
     public void dispatchCommand(CommandSender sender, Args args) {
-
-        Player p = (Player) sender;
-        if (ClickCrystalsAlias.config.getSpawn().getWorld() == null) {
-            p.sendMessage(Component.text(color(ClickCrystalsAlias.config.prefix + "There is no spawn yet!")));
-            return;
-        }
-        p.sendMessage(Component.text(color(ClickCrystalsAlias.config.prefix + "teleporting you to spawn...")));
-        p.teleport(ClickCrystalsAlias.config.getSpawn());
-        SoundPlayer s = new SoundPlayer(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP,10,1);
-        s.play(p);
-        ClickCrystalsAlias.config.save();
+        sender.sendMessage(Component
+                .text(color(ClickCrystalsAlias.config.prefix + "Click here to join the discord! \n &8> &d&n" + ClickCrystalsAlias.config.discordURL))
+                .clickEvent(ClickEvent.openUrl(ClickCrystalsAlias.config.discordURL)));
     }
 
     @Override

@@ -2,11 +2,11 @@ package me.trouper.clickcrystalsalias;
 
 import io.github.itzispyder.pdk.PDK;
 import io.github.itzispyder.pdk.utils.misc.JsonSerializable;
-import me.trouper.clickcrystalsalias.commands.AdminCommand;
-import me.trouper.clickcrystalsalias.commands.SpawnCommand;
+import me.trouper.clickcrystalsalias.commands.*;
 import me.trouper.clickcrystalsalias.data.Config;
 import me.trouper.clickcrystalsalias.events.BlockPlaceListener;
 import me.trouper.clickcrystalsalias.events.ChunkEvents;
+import me.trouper.clickcrystalsalias.events.DeathEvent;
 import me.trouper.clickcrystalsalias.events.JoinEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -45,11 +45,16 @@ public final class ClickCrystalsAlias extends JavaPlugin {
         new ChunkEvents().register();
         new JoinEvent().register();
         new BlockPlaceListener().register();
+        new DeathEvent().register();
     }
 
     public void initCommands() {
         new AdminCommand().register();
         new SpawnCommand().register();
+        new DiscordCommand().register();
+        new VulcanBanCommand().register();
+        new BoxCommand().register();
+        new AutoKitCommand().register();
     }
 
     public static ClickCrystalsAlias getInstance() {

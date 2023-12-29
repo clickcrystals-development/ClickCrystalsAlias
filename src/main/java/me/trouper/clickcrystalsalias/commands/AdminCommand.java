@@ -25,10 +25,11 @@ public class AdminCommand implements CustomCommand {
             }
             case "reload" -> {
                 ClickCrystalsAlias.reloadKonfig();
+                p.sendMessage(Component.text(color(ClickCrystalsAlias.config.prefix + "Reloaded the config.")));
             }
             case "setspawn" -> {
                 ClickCrystalsAlias.config.spawnLocation.setSpawn(p.getLocation());
-                p.sendMessage(Component.text(color(ClickCrystalsAlias.config.prefix + " Set the server spawn.")));
+                p.sendMessage(Component.text(color(ClickCrystalsAlias.config.prefix + "Set the server spawn.")));
                 ClickCrystalsAlias.config.save();
             }
         }

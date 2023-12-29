@@ -10,6 +10,15 @@ commands:
     permission: cca.admin
   spawn:
     usage: /spawn
+  discord:
+    usage: /discord
+  vulcanban:
+    permission: cca.admin
+  box:
+    usage: /box
+  autokit:
+    usage: /autokit <integer>
+    aliases: /ak
 permissions:
   cca.admin:
     description: admid
